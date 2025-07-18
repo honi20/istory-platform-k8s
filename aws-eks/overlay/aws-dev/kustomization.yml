@@ -19,10 +19,6 @@ secretGenerator:
   - name: istory-db-secret
     envs:
       - .env.secret
-    # 아래 양식으로 .env.secret 파일을 만드세요
-    # MYSQL_USER=myuser
-    # MYSQL_PASSWORD=myuserpassword
-    # MYSQL_ROOT_PASSWORD=myrootpassword
 
 images:
   # base/istory-app/istory-app-deploy.yml 내의 이미지 이름과 동일해야 변경됨
