@@ -1,10 +1,8 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: gp2-persistent
-provisioner: kubernetes.io/aws-ebs
-reclaimPolicy: Retain
-parameters:
-  type: gp2
-  fsType: ext4
-volumeBindingMode: WaitForFirstConsumer
+  name: mysql-initdb-config
+data:
+  init-user.sql: |
+    GRANT ALL PRIVILEGES ON istory.* TO 'user'@'%';
+    FLUSH PRIVILEGES;
